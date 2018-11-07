@@ -25,6 +25,9 @@ void reset_cpu(void)
 #ifdef CONFIG_CPU_V7A
 	writel(0x1, samsung_get_base_swreset());
 #endif
+#ifdef CONFIG_ARCH_EXYNOS5433
+	writel(0x1, (void *)0x105C0400);
+#endif
 }
 
 #if !CONFIG_IS_ENABLED(SYS_DCACHE_OFF)

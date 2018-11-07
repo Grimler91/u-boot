@@ -1,0 +1,84 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * SAMSUNG EXYNOS5433 SoC device tree source
+ *
+ * Copyright (c) 2018 Samsung Electronics Co., Ltd.
+ *		http://www.samsung.com
+ *
+ */
+
+/dts-v1/;
+#include "skeleton.dtsi"
+
+/ {
+	mmc_0: mmc@15540000 {
+		compatible = "samsung,exynos-dwmmc";
+		reg = <0x0 0x15540000 0x0 0x1000>;
+		samsung,bus-width = <8>;
+		samsung,timing = <1 3 3>;
+		samsung,removable = <0>;
+		samsung,pre-init;
+		fifoth_val = <0x201f0020>;
+		status = "disabled";
+	};
+
+	pinctrl_alive: pinctrl@10580000 {
+		compatible = "samsung,exynos5433-pinctrl";
+		reg = <0x10580000 0x1a20>, <0x11090000 0x100>;
+		/* gpa0..3, gpf1..5 */
+
+		gpa0: gpa0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpa1: gpa1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpa2: gpa2 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpa3: gpa3 {
+			gpio-controller;
+			#gpio-cells = <2>;
+
+		};
+	};
+
+	pinctrl_peric: pinctrl@14cc0000 {
+		compatible = "samsung,exynos5433-pinctrl";
+		reg = <0x14cc0000 0x1100>;
+		/* gpv7, gpb0, gpc0..3, gpg0, gpd0..4,6,8,7, gpg1..3 */
+
+		gpv7: gpv7 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpb0: gpb0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpb1: gpb1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpb2: gpb2 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+	};
+
+	serial_1: serial@14c20000 {
+		compatible = "samsung,exynos4210-uart";
+		reg = <0x14c20000 0x100>;
+		id = <1>;
+		status = "disabled";
+	};
+};

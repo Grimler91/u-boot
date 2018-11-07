@@ -37,7 +37,8 @@ config ARCH_EXYNOS5
 	help
 	  Samsung Exynos5 SoC family are based on ARM Cortex-A15 CPU (and
 	  Cortex-A7 CPU in big.LITTLE configuration). There are multiple SoCs
-	  in this family including Exynos5250, Exynos5420 and Exynos5800.
+	  in this family including Exynos5250, Exynos5420, Exynos5433 and
+          Exynos5800.
 
 config ARCH_EXYNOS7
 	bool "Exynos7 SoC family"
