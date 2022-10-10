@@ -1,0 +1,14 @@
+if TARGET_GTS2
+
+config SYS_BOARD
+	default "gts2"
+	help
+	  GTS2 is a family of Exynos5433 SoC based android tablet
+
+config SYS_VENDOR
+	default "samsung"
+
+config SYS_CONFIG_NAME
+	default "gts2"
+
+endif

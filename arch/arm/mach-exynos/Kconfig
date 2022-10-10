@@ -95,6 +95,9 @@ config EXYNOS5250
 config EXYNOS5420
 	bool
 
+config EXYNOS5433
+	bool
+
 config EXYNOS5_DT
 	bool
 
@@ -168,6 +171,12 @@ config TARGET_PEACH_PIT
 	select OF_CONTROL
 	select SUPPORT_SPL
 
+config TARGET_GTS2
+	bool "Gts2 board"
+	select EXYNOS5_DT
+	select EXYNOS5433
+	select OF_CONTROL
+
 endchoice
 endif
 
@@ -238,6 +247,7 @@ source "board/samsung/odroid/Kconfig"
 source "board/samsung/arndale/Kconfig"
 source "board/samsung/smdk5250/Kconfig"
 source "board/samsung/smdk5420/Kconfig"
+source "board/samsung/gts2/Kconfig"
 source "board/samsung/espresso7420/Kconfig"
 source "board/samsung/axy17lte/Kconfig"
 

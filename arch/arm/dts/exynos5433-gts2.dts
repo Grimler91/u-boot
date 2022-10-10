@@ -1,0 +1,37 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * Samsung Gts2 device tree source
+ *
+ * Copyright (c) 2018 Samsung Electronics Co., Ltd.
+ *		http://www.samsung.com
+ *
+ */
+
+/dts-v1/;
+#include "exynos5433.dtsi"
+
+/ {
+	model = "Samsung Gts2 based on exynos5433";
+	compatible = "samsung,gts2", "samsung,exynos5433";
+
+	aliases {
+		serial0 = &serial_1;
+		console = &serial_1;
+		i2c0 = &i2c;
+	};
+
+	i2c: i2c {
+		compatible = "i2c-gpio";
+		gpios = <&gpb0 0 0>,	/* sda */
+			<&gpb0 1 0>;	/* scl */
+		i2c-gpio,delay-us = <2>;        /* ~100 kHz */
+	};
+};
+
+&mmc_0 {
+	status = "okay";
+};
+
+&serial_1 {
+	status = "okay";
+};
